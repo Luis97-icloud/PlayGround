@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#101619" />
+  <title>Neon Coast — Distrito libre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="game-root">
+    <canvas id="game"></canvas>
+    <div class="film-grain"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">NC</span><span>NEON <b>COAST</b></span></div>
+      <div class="district-tag"><i></i><span id="district-name">CENTRO · DISTRITO 01</span></div>
+      <div class="clock"><span class="sun-icon">☀</span><span id="clock">18:42</span><span class="weather">28° · DESPEJADO</span></div>
+    </header>
+    <section class="mission-card" id="mission-card">
+      <div class="mission-overline"><span class="live-dot"></span> ACTIVIDAD DISPONIBLE</div>
+      <div class="mission-title">PUNTO DE<br><em>RECONOCIMIENTO</em></div>
+      <p>Localiza los 5 drones de vigilancia<br>y despeja el perímetro.</p>
+      <div class="mission-progress"><div><span id="mission-count">0</span><span class="muted"> / 5 SEÑALES</span></div><div class="progress-track"><i id="progress-fill"></i></div></div>
+      <div class="mission-reward"><span>RECOMPENSA</span><b>+ $2,500</b></div>
+    </section>
+    <div class="minimap-frame"><canvas id="minimap" width="180" height="180"></canvas><div class="map-label">NEON COAST <span>●</span></div></div>
+    <div class="player-status">
+      <div class="health-row"><span class="status-icon">✚</span><div class="bar-wrap"><div class="bar-label">SALUD <b id="health-value">100</b></div><div class="bar"><i id="health-bar"></i></div></div></div>
+      <div class="ammo-row"><span class="ammo-icon">▰</span><b id="ammo">18</b><span class="ammo-total">/ 72</span><span class="weapon-name">VECTOR 9</span></div>
+    </div>
+    <div class="vehicle-hud hidden" id="vehicle-hud"><div class="speed"><span id="speed-value">000</span><small>KM/H</small></div><div class="vehicle-label"><span class="engine-dot"></span><span id="vehicle-name">COUPE SPORT</span></div><div class="gear">D</div></div>
+    <div class="objective-toast" id="objective-toast"><span>◈</span> <b>DRON LOCALIZADO</b><small>+ 500 XP</small></div>
+    <div class="interaction" id="interaction"></div>
+    <div class="crosshair hidden" id="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+    <div class="cover-indicator" id="cover-indicator"><span>▰</span> COBERTURA</div>
+    <div class="speed-lines" id="speed-lines"></div>
+    <div class="toast" id="toast"></div>
+    <div class="start-screen" id="start-screen">
+      <div class="start-backdrop"></div>
+      <div class="start-content">
+        <div class="start-kicker"><span></span> UNA CIUDAD · TU HISTORIA</div>
+        <h1>NEON<br><i>COAST</i></h1>
+        <p>La ciudad nunca espera.<br><b>Hazla tuya.</b></p>
+        <button id="start-button"><span>ENTRAR EN LA CIUDAD</span><b>↗</b></button>
+        <div class="start-note">EXPERIENCIA DE ACCIÓN EN MUNDO ABIERTO</div>
+      </div>
+      <div class="start-bottom"><span>01 — NEON COAST</span><span>18:42 · VIER. 14 JUN.</span></div>
+    </div>
+    <div class="pause-overlay hidden" id="pause-overlay"><div class="pause-box"><span class="pause-kicker">NEON COAST</span><h2>PAUSA</h2><p>La ciudad sigue ahí fuera.</p><button id="resume-button">VOLVER AL JUEGO <b>↗</b></button></div></div>
+    <div class="controls-hint" id="controls-hint"><span>WASD</span> MOVER <i></i><span>F</span> VEHÍCULO <i></i><span>CLICK</span> APUNTAR / DISPARAR <i></i><span>Q</span> COBERTURA</div>
+    <div class="toast-stack" id="toast-stack"></div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
